@@ -8,6 +8,8 @@ namespace GameEngine.Services
 
         public void DisegnaScacchiera(Scacchiera scacchiera)
         {
+            Console.Clear();
+
             for (int i = 0; i <= 4; i++)
             {
                 Console.WriteLine($"{scacchiera.Cella(1).Righe[i]}|{scacchiera.Cella(2).Righe[i]}|{scacchiera.Cella(3).Righe[i]}");
