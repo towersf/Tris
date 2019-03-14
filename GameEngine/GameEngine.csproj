@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TavolaDaGioco\Cella.cs" />
+    <Compile Include="Services\DisegnatoreScacchieraService.cs" />
     <Compile Include="GameRunner.cs" />
     <Compile Include="Giocatore.cs" />
+    <Compile Include="Interfaces\ISimbolo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TavolaDaGioco\Scacchiera.cs" />
+    <Compile Include="Simboli\SimoboloO.cs" />
+    <Compile Include="Simboli\SimoboloVuoto.cs" />
+    <Compile Include="Simboli\SimoboloX.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
