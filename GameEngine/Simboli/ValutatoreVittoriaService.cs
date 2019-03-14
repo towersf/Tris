@@ -41,13 +41,13 @@ namespace GameEngine.Simboli
 
         private bool _rigaVincente(List<Cella> listaCelle, int cella1, int cella2, int cella3)
         {
-            var simbolo = listaCelle[cella1 - 1].Simbolo;
+            var simbolo1 = listaCelle[cella1 - 1].Simbolo;
+            var simbolo2 = listaCelle[cella2 - 1].Simbolo;
+            var simbolo3 = listaCelle[cella3 - 1].Simbolo;
 
-            var riga = new[] { listaCelle[cella2 - 1].Simbolo, listaCelle[cella3 - 1].Simbolo };
-
-            return simbolo.GetType() != typeof(SimboloVuoto)
-                   && simbolo.GetType() == riga[0].GetType()
-                   && simbolo.GetType() == riga[1].GetType();
+            return simbolo1.GetType() != typeof(SimboloVuoto)
+                && simbolo1.GetType() == simbolo2.GetType()
+                && simbolo1.GetType() == simbolo3.GetType();
         }
     }
 }
