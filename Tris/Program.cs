@@ -1,5 +1,6 @@
 ﻿using System;
 using GameEngine;
+using GameEngine.Simboli;
 
 namespace Tris
 {
@@ -7,18 +8,32 @@ namespace Tris
     {
         static void Main(string[] args)
         {
-            var nomeGiocatore1 = "Sergio";
-            var nomeGiocatore2 = "Fabrizio";
-
-            var giocatore1 = new Giocatore(nomeGiocatore1);
-            var giocatore2 = new Giocatore(nomeGiocatore2);
+            var giocatore1 = new Giocatore("Sergio", new SimoboloX());
+            var giocatore2 = new Giocatore("Fabrizio", new SimoboloO());
 
             var ge = new GameRunner(giocatore1, giocatore2);
 
             ge.Run();
 
+            _showEsito(ge);
+            _byebye();
+        }
+
+        private static void _byebye()
+        {
             Console.WriteLine("Premi invio per uscire...");
             Console.ReadLine();
+        }
+
+        private static void _showEsito(GameRunner ge)
+        {
+            var message = ge.Vincitore != null
+                            ? $"{ge.Vincitore.Nome} hai vinto !!!"
+                            : "Nessun vincitore.";
+
+            Console.WriteLine();
+            Console.WriteLine(message);
+            Console.WriteLine();
         }
     }
 }

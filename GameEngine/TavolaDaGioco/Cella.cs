@@ -10,7 +10,7 @@ namespace GameEngine.TavolaDaGioco
 
         public Cella(int numero)
         {
-            Simbolo = new SimoboloVuoto(numero);
+            Simbolo = new SimboloVuoto(numero);
             Numero = numero;
         }
     }

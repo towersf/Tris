@@ -10,27 +10,24 @@ namespace GameEngine.Services
         {
             Console.Clear();
 
-            for (int i = 0; i <= 4; i++)
+            for (var i = 0; i <= 4; i++)
             {
-                Console.WriteLine($"{scacchiera.Cella(1).Righe[i]}|{scacchiera.Cella(2).Righe[i]}|{scacchiera.Cella(3).Righe[i]}");
+                Console.WriteLine($"{scacchiera.GetSimboloCella(1).Righe[i]}|{scacchiera.GetSimboloCella(2).Righe[i]}|{scacchiera.GetSimboloCella(3).Righe[i]}");
             }
 
             Console.WriteLine($"-----------------------");
 
-            for (int i = 0; i <= 4; i++)
+            for (var i = 0; i <= 4; i++)
             {
-                Console.WriteLine($"{scacchiera.Cella(4).Righe[i]}|{scacchiera.Cella(5).Righe[i]}|{scacchiera.Cella(6).Righe[i]}");
+                Console.WriteLine($"{scacchiera.GetSimboloCella(4).Righe[i]}|{scacchiera.GetSimboloCella(5).Righe[i]}|{scacchiera.GetSimboloCella(6).Righe[i]}");
             }
-
-
+            
             Console.WriteLine($"-----------------------");
-
-
-            for (int i = 0; i <= 4; i++)
+            
+            for (var i = 0; i <= 4; i++)
             {
-                Console.WriteLine($"{scacchiera.Cella(7).Righe[i]}|{scacchiera.Cella(8).Righe[i]}|{scacchiera.Cella(9).Righe[i]}");
+                Console.WriteLine($"{scacchiera.GetSimboloCella(7).Righe[i]}|{scacchiera.GetSimboloCella(8).Righe[i]}|{scacchiera.GetSimboloCella(9).Righe[i]}");
             }
-
         }
     }
 }
