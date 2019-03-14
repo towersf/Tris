@@ -1,4 +1,5 @@
-﻿using GameEngine;
+﻿using System;
+using GameEngine;
 
 namespace Tris
 {
@@ -16,6 +17,8 @@ namespace Tris
 
             ge.Run();
 
+            Console.WriteLine("Premi invio per uscire...");
+            Console.ReadLine();
         }
     }
 }

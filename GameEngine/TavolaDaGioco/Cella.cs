@@ -6,11 +6,11 @@ namespace GameEngine.TavolaDaGioco
     public class Cella
     {
         public int Numero { get; }
-        public ISimbolo simbolo;
+        public ISimbolo Simbolo;
 
         public Cella(int numero)
         {
-            simbolo = new SimoboloVuoto();
+            Simbolo = new SimoboloVuoto(numero);
             Numero = numero;
         }
     }
