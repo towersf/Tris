@@ -1,18 +1,21 @@
-﻿using System;
+﻿using GameEngine.Interfaces;
+using System;
 
 namespace GameEngine
 {
-    public class Giocatore
+    public class Giocatore : IGiocatore
     {
         public string Nome { get; }
+        public ISimbolo Simbolo { get; }
 
-        public Giocatore(string nomeGiocatore)
+        public Giocatore(string nome, ISimbolo simbolo)
         {
-            if (string.IsNullOrWhiteSpace(nomeGiocatore))
+            if (string.IsNullOrWhiteSpace(nome))
             {
                 throw new Exception("Nome giocatore obbligatorio");
             }
-            Nome = nomeGiocatore;
+            Nome = nome;
+            Simbolo = simbolo;
         }
     }
 }

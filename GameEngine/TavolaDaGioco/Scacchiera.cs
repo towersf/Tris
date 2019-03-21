@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GameEngine.Interfaces;
 using GameEngine.Simboli;
 
@@ -21,6 +22,15 @@ namespace GameEngine.TavolaDaGioco
         public ISimbolo Cella(int posizione)
         {
             return _listaCelle[posizione - 1].Simbolo;
+        }
+
+        public void ImpostaSimbolo(int posizione, ISimbolo simbolo)
+        {
+            if (_listaCelle[posizione - 1].Simbolo.GetType() != typeof(SimboloVuoto))
+            {
+                throw new Exception("Questa cella non è disponibile.");
+            }
+            _listaCelle[posizione - 1].Simbolo = simbolo;
         }
     }
 }

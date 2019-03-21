@@ -1,5 +1,7 @@
 ﻿using GameEngine.Services;
+using GameEngine.Simboli;
 using GameEngine.TavolaDaGioco;
+using System;
 
 namespace GameEngine
 {
@@ -8,6 +10,7 @@ namespace GameEngine
         private Scacchiera _scacchiera;
         private Giocatore _giocatore1;
         private Giocatore _giocatore2;
+        
         public GameRunner(Giocatore giocatore1, Giocatore giocatore2)
         {
             _scacchiera = new Scacchiera();
@@ -20,7 +23,40 @@ namespace GameEngine
             var dsService = new DisegnatoreScacchieraService();
             dsService.DisegnaScacchiera(_scacchiera);
 
+            var trovatoVincitore = false;
+            
+            while (!trovatoVincitore)
+            {
+                _eseguiMossa(_giocatore1);
+                dsService.DisegnaScacchiera(_scacchiera);
 
+                _eseguiMossa(_giocatore2);
+                dsService.DisegnaScacchiera(_scacchiera);
+
+                
+            }
+
+        }
+
+        private void _eseguiMossa(IGiocatore giocatore)
+        {
+            var rispostaValida = false;
+            while (!rispostaValida)
+            {
+                Console.WriteLine($"{giocatore.Nome} fai la tua mossa");
+                var scelta = Console.ReadLine();
+                try
+                {
+                    _scacchiera.ImpostaSimbolo(Convert.ToInt32(scelta), giocatore.Simbolo);
+                    rispostaValida = true;
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine("Mossa non valida");
+                }
+            }
+            
+                
         }
     }
 }

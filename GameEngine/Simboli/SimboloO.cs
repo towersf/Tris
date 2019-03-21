@@ -2,11 +2,11 @@
 
 namespace GameEngine.Simboli
 {
-    public class SimoboloO : ISimbolo
+    public class SimboloO : ISimbolo
     {
         public string[] Righe { get; }
 
-        public SimoboloO()
+        public SimboloO()
         {
             Righe = new string[5];
             Righe[0] = "  000  ";
