@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arbitro.cs" />
     <Compile Include="IGiocatore.cs" />
     <Compile Include="TavolaDaGioco\Cella.cs" />
     <Compile Include="Services\DisegnatoreScacchieraService.cs" />

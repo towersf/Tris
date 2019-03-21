@@ -21,20 +21,28 @@ namespace GameEngine
         public void Run()
         {
             var dsService = new DisegnatoreScacchieraService();
+            var arbitro = new Arbitro(_giocatore1, _giocatore2);
             dsService.DisegnaScacchiera(_scacchiera);
 
-            var trovatoVincitore = false;
+            IGiocatore vincitore = null;
             
-            while (!trovatoVincitore)
+            while (vincitore == null)
             {
                 _eseguiMossa(_giocatore1);
                 dsService.DisegnaScacchiera(_scacchiera);
+                vincitore = arbitro.ControllaVincitore(_scacchiera);
+
+                if (vincitore != null)
+                {                    
+                    break;
+                }                
 
                 _eseguiMossa(_giocatore2);
                 dsService.DisegnaScacchiera(_scacchiera);
-
-                
+                vincitore = arbitro.ControllaVincitore(_scacchiera);
             }
+
+            Console.WriteLine($"Il vincitore è {vincitore.Nome}");
 
         }
 

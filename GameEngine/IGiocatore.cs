@@ -2,7 +2,7 @@
 
 namespace GameEngine
 {
-    internal interface IGiocatore
+    public interface IGiocatore
     {
         string Nome { get; }
         ISimbolo Simbolo { get; }
